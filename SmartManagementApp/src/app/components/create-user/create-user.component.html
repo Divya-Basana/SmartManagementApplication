@@ -1,0 +1,99 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2 class="text-dark fw-bold mb-4">{{ isEditMode ? 'Edit User' : 'Create User' }}</h2>
+      
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label text-end fw-bold">Email Address</label>
+          <div class="col-sm-9">
+            <input type="email" formControlName="emailAddress" class="form-control rounded-0"
+                   [ngClass]="{ 'is-invalid': submitted && f['emailAddress'].errors }">
+            <div *ngIf="submitted && f['emailAddress'].errors" class="invalid-feedback d-block">
+              <span *ngIf="f['emailAddress'].errors['required']">Email is required.</span>
+              <span *ngIf="f['emailAddress'].errors['email']">Enter a valid email address.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label text-end fw-bold">Last Name</label>
+          <div class="col-sm-9">
+            <input type="text" formControlName="lastName" class="form-control rounded-0"
+                   [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }">
+            <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback d-block">
+              Last name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label text-end fw-bold">First Name</label>
+          <div class="col-sm-9">
+            <input type="text" formControlName="firstName" class="form-control rounded-0"
+                   [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }">
+            <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback d-block">
+              First name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label text-end fw-bold">Phone</label>
+          <div class="col-sm-9">
+            <input type="text" formControlName="phone" class="form-control rounded-0" placeholder="e.g. 1234567890"
+                   [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }">
+            <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback d-block text-danger">
+              <span *ngIf="f['phone'].errors['required']">The Phone field is required.</span>
+              <span *ngIf="f['phone'].errors['pattern']">The Phone field is not a valid phone number (10 digits).</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label text-end fw-bold">Employee Type</label>
+          <div class="col-sm-9">
+            <select formControlName="employeeType" class="form-select rounded-0"
+                    [ngClass]="{ 'is-invalid': submitted && f['employeeType'].errors }">
+              <option value="">Select Type</option>
+              <option *ngFor="let type of employeeTypes" [value]="type">{{ type }}</option>
+            </select>
+            <div *ngIf="submitted && f['employeeType'].errors" class="invalid-feedback d-block">
+              Employee type is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label text-end fw-bold">Company Name</label>
+          <div class="col-sm-9">
+            <input type="text" formControlName="companyName" class="form-control rounded-0"
+                   [ngClass]="{ 'is-invalid': submitted && f['companyName'].errors }">
+            <div *ngIf="submitted && f['companyName'].errors" class="invalid-feedback d-block">
+              Company name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label text-end fw-bold">User Is Active</label>
+          <div class="col-sm-9 d-flex align-items-center">
+            <input type="checkbox" formControlName="isActive" class="form-check-input mt-0 me-2">
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-sm-9 offset-sm-3">
+            <button type="submit" class="btn btn-outline-secondary px-3 py-1 rounded-0 shadow-sm me-2">
+              {{ isEditMode ? 'Update' : 'Create' }}
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-4 border-top pt-2">
+          <a routerLink="/user-list" class="text-primary text-decoration-none small">Back to List</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

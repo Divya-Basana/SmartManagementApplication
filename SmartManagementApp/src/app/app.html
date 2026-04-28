@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/">
+      <i class="bi bi-shield-check me-2"></i>Smart Management App
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user-list" routerLinkActive="active">User List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/create-user" routerLinkActive="active">Add User</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-content py-4">
+  <div class="container">
+    <!-- Breadcrumb or page title could go here -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<footer class="footer mt-auto py-3 bg-light border-top text-center">
+  <div class="container">
+    <span class="text-muted">© 2026 Smart Management Application</span>
+  </div>
+</footer>

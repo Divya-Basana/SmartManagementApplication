@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartManagementApi", "SmartManagementApi\SmartManagementApi.csproj", "{B8176FBA-D177-3142-8CC1-8E5183BACFFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8176FBA-D177-3142-8CC1-8E5183BACFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8176FBA-D177-3142-8CC1-8E5183BACFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8176FBA-D177-3142-8CC1-8E5183BACFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8176FBA-D177-3142-8CC1-8E5183BACFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E78BE91-11C4-487D-B4E0-661D88B7F1AC}
+	EndGlobalSection
+EndGlobal

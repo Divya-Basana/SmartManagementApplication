@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YTUJU3ko3Ow=",
+  "dgSpecHash": "CtVDU7P9AkM=",
   "success": true,
-  "projectFilePath": "D:\\SnMatrixProject\\SmartManagementApi\\SmartManagementApi.csproj",
+  "projectFilePath": "D:\\SmartManagementApplication\\SmartManagementApi\\SmartManagementApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lenovo\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
@@ -54,5 +54,15 @@
     "C:\\Users\\lenovo\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.4\\system.security.cryptography.pkcs.9.0.4.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.4\\system.security.cryptography.protecteddata.9.0.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "D:\\SmartManagementApplication\\SmartManagementApi\\SmartManagementApi.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\SmartManagementApplication\\SmartManagementApi\\SmartManagementApi.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

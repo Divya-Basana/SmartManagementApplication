@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SnMatrixProject\\SmartManagementApi\\SmartManagementApi.csproj": {}
+    "D:\\SmartManagementApplication\\SmartManagementApi\\SmartManagementApi.csproj": {}
   },
   "projects": {
-    "D:\\SnMatrixProject\\SmartManagementApi\\SmartManagementApi.csproj": {
+    "D:\\SmartManagementApplication\\SmartManagementApi\\SmartManagementApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SnMatrixProject\\SmartManagementApi\\SmartManagementApi.csproj",
+        "projectUniqueName": "D:\\SmartManagementApplication\\SmartManagementApi\\SmartManagementApi.csproj",
         "projectName": "SmartManagementApi",
-        "projectPath": "D:\\SnMatrixProject\\SmartManagementApi\\SmartManagementApi.csproj",
+        "projectPath": "D:\\SmartManagementApplication\\SmartManagementApi\\SmartManagementApi.csproj",
         "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\SnMatrixProject\\SmartManagementApi\\obj\\",
+        "outputPath": "D:\\SmartManagementApplication\\SmartManagementApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"

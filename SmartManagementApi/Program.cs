@@ -1,6 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using SmartManagementApi.Data;
 
+// ============================================================================
+// File: Program.cs
+// Purpose: Application entry point and configuration pipeline.
+// Logic: Registers services, configures middleware, and starts the web host.
+// ============================================================================
+
 var builder = WebApplication.CreateBuilder(args);
 
 // 1. Add services to the container.

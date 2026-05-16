@@ -1,7 +1,17 @@
 using System.ComponentModel.DataAnnotations;
 
+// ============================================================================
+// File: User.cs
+// Purpose: Defines the User entity model for the database schema.
+// This model represents the core data structure for user management.
+// ============================================================================
+
 namespace SmartManagementApi.Models
 {
+    /// <summary>
+    /// Represents a user within the Smart Management system.
+    /// Acts as the primary data transfer object (DTO) and database entity.
+    /// </summary>
     public class User
     {
         public int Id { get; set; }

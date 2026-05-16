@@ -5,6 +5,16 @@ import { RouterLink } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user.model';
 
+// ============================================================================
+// File: user-list.component.ts
+// Purpose: Displays a tabular or list view of all users in the system.
+// Includes features for filtering, selecting, and deleting users.
+// ============================================================================
+
+/**
+ * Controller class for the User List view.
+ * Responsible for fetching user data and handling user interactions (filter/delete).
+ */
 @Component({
   selector: 'app-user-list',
   standalone: true,
@@ -21,15 +31,26 @@ export class UserListComponent implements OnInit {
   errorMessage: string = '';
   successMessage: string = '';
 
+  /**
+   * Constructor injects the necessary services.
+   * @param userService Service for API interactions.
+   * @param cdr Service to manually trigger change detection when data updates.
+   */
   constructor(
     private userService: UserService,
     private cdr: ChangeDetectorRef
   ) { }
 
+  /**
+   * Lifecycle hook. Automatically loads the user list when component starts.
+   */
   ngOnInit(): void {
     this.loadUsers();
   }
 
+  /**
+   * Calls the API to fetch all users and initializes the display lists.
+   */
   loadUsers(): void {
     this.loading = true;
     console.log('UserList: Calling getUsers...');
@@ -49,6 +70,10 @@ export class UserListComponent implements OnInit {
     });
   }
 
+  /**
+   * Filters the displayed user list based on the user's search term.
+   * Matches against first name, last name, and email address.
+   */
   applyFilter(): void {
     if (!this.searchTerm) {
       this.filteredUsers = [...this.users];
@@ -62,6 +87,10 @@ export class UserListComponent implements OnInit {
     }
   }
 
+  /**
+   * Triggers the deletion of a user after confirmation.
+   * @param id The ID of the user to delete.
+   */
   deleteUser(id: number | undefined): void {
     if (!id) return;
     if (confirm('Delete this user?')) {
@@ -78,6 +107,10 @@ export class UserListComponent implements OnInit {
     }
   }
 
+  /**
+   * Selects a user to display more details (if a details pane is available).
+   * @param user The User object to select.
+   */
   viewDetails(user: User): void {
     this.selectedUser = user;
   }

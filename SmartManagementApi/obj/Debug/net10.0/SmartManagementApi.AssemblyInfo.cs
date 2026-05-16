@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartManagementApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27ce95330d185515c6ac3548c246fdbe65036e97")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1d40dbe9a320c3a984af78160bf93bfe0e81689")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartManagementApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartManagementApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

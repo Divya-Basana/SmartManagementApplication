@@ -3,19 +3,41 @@ using Microsoft.EntityFrameworkCore;
 using SmartManagementApi.Data;
 using SmartManagementApi.Models;
 
+// ============================================================================
+// File: UserController.cs
+// Purpose: Handles incoming HTTP requests related to User management.
+// Acts as the API endpoint controller for CRUD operations on Users.
+// ============================================================================
+
 namespace SmartManagementApi.Controllers
 {
+    /// <summary>
+    /// RESTful API Controller responsible for user data operations.
+    /// Exposes endpoints for creating, reading, updating, and deleting user records.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
         private readonly AppDbContext _context;
 
+        /// <summary>
+        /// Constructor for UserController.
+        /// Inputs: AppDbContext (Injected database context)
+        /// Outputs: Instance of UserController
+        /// Logic: Initializes the local context field for database operations.
+        /// </summary>
         public UserController(AppDbContext context)
         {
             _context = context;
         }
 
+        /// <summary>
+        /// Retrieves a list of all active and inactive users.
+        /// Inputs: None
+        /// Outputs: ActionResult containing an IEnumerable of User objects.
+        /// Logic: Queries the database, sorts by creation date descending, and returns 200 OK.
+        /// </summary>
         // GET: api/user
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
@@ -25,6 +47,12 @@ namespace SmartManagementApi.Controllers
             return Ok(users);
         }
 
+        /// <summary>
+        /// Creates a new user record in the system.
+        /// Inputs: User object (from request body)
+        /// Outputs: Created ActionResult with the newly created User.
+        /// Logic: Validates input, sets creation timestamp, saves to DB, and returns 201 Created.
+        /// </summary>
         // POST: api/user
         [HttpPost]
         public async Task<ActionResult<User>> CreateUser(User user)
@@ -46,6 +74,12 @@ namespace SmartManagementApi.Controllers
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
         }
 
+        /// <summary>
+        /// Retrieves a specific user by their unique identifier.
+        /// Inputs: int id (User ID from URL path)
+        /// Outputs: ActionResult containing the User object, or 404 Not Found.
+        /// Logic: Searches the database for the matching primary key.
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -53,6 +87,12 @@ namespace SmartManagementApi.Controllers
             return user == null ? NotFound() : Ok(user);
         }
 
+        /// <summary>
+        /// Updates an existing user's details.
+        /// Inputs: int id (URL path), User object (Request body)
+        /// Outputs: IActionResult (200 OK with updated object, or BadRequest/NotFound)
+        /// Logic: Validates ID match, updates modified state, protects CreatedAt field, and saves changes.
+        /// </summary>
         // PUT: api/user/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, User user)
@@ -87,6 +127,12 @@ namespace SmartManagementApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Removes a user from the system based on ID.
+        /// Inputs: int id (User ID to delete)
+        /// Outputs: IActionResult (204 No Content on success, 404 Not Found if missing)
+        /// Logic: Finds user, removes entity from context, and commits transaction.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
@@ -97,6 +143,12 @@ namespace SmartManagementApi.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Helper method to check if a user exists in the database.
+        /// Inputs: int id (User ID)
+        /// Outputs: boolean (True if exists, false otherwise)
+        /// Logic: Uses LINQ Any() to efficiently check for existence without loading the full entity.
+        /// </summary>
         private bool UserExists(int id)
         {
             return _context.Users.Any(e => e.Id == id);
